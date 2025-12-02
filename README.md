@@ -11,7 +11,7 @@ This project simulates live delivery tracking with a driver moving along a prede
 
 **Key Features:**
 
-- 🗺️ **Live Map Tracking** with Google Maps integration
+- 🗺️ **Live Map Tracking** with OpenStreetMap integration
 - 🚗 **Animated Driver Marker** with status-based color coding
 - 📍 **Route Polyline** showing the path traveled
 - ⏱️ **Real-time ETA & Distance** calculations
@@ -64,7 +64,7 @@ lib/
   - `TrackingBloc`: Handles `LoadRoute`, `StartTracking`, `UpdateLocation`, `StopTracking`
   - `MapBloc`: Manages map camera and polyline updates
 - **Widgets**: Reusable UI components
-  - `TrackingPage`: Main screen with Google Maps
+  - `TrackingPage`: Main screen with OpenStreetMap
   - `BottomInfoSheet`: Draggable sheet showing driver info, ETA, distance
 
 #### 2. **Domain Layer**
@@ -86,7 +86,6 @@ lib/
 
 - Flutter SDK (3.10+)
 - Dart SDK (2.18+)
-- Google Maps API Key
 
 ### 1. Clone & Install
 
@@ -96,44 +95,7 @@ cd flutter_live_tracking
 flutter pub get
 ```
 
-### 2. Configure Google Maps API Key
-
-#### Android
-
-Add your API key to `android/app/src/main/AndroidManifest.xml`:
-
-```xml
-<manifest>
-  <application>
-    ...
-    <meta-data
-      android:name="com.google.android.geo.API_KEY"
-      android:value="YOUR_API_KEY_HERE"/>
-  </application>
-</manifest>
-```
-
-#### iOS
-
-Add to `ios/Runner/AppDelegate.swift`:
-
-```swift
-import GoogleMaps
-
-@UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-  ) -> Bool {
-    GMSServices.provideAPIKey("YOUR_API_KEY_HERE")
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
-}
-```
-
-### 3. Run the App
+### 2. Run the App
 
 ```bash
 flutter run
@@ -164,7 +126,7 @@ The app uses a predefined route in Hyderabad stored in `assets/mock/route_hyd.js
 
 ### Map Features
 
-- ✅ Google Maps integration
+- ✅ OpenStreetMap integration
 - ✅ Driver marker with rotation based on heading
 - ✅ Status-based marker colors (Blue → Green → Orange → Red)
 - ✅ Customer/destination marker
@@ -211,7 +173,8 @@ flutter test
 dependencies:
   flutter_bloc: ^9.1.1 # State management
   equatable: ^2.0.3 # Value equality
-  google_maps_flutter: ^2.2.5 # Maps integration
+  flutter_map: ^8.2.2 # Maps integration
+  latlong2: ^0.9.0 # LatLng coordinates
   geolocator: ^14.0.2 # Location utilities
   intl: ^0.20.2 # Date/time formatting
   vector_math: ^2.1.0 # Math calculations
@@ -222,7 +185,7 @@ dependencies:
 ## 🎯 Assignment Requirements Checklist
 
 - ✅ Clean Architecture + MVVM + BLoC
-- ✅ Google Maps with live marker movement
+- ✅ OpenStreetMap with live marker movement
 - ✅ Route polyline visualization
 - ✅ Dynamic ETA & distance calculations
 - ✅ Bottom sheet with driver info
