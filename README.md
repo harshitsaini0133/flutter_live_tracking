@@ -199,7 +199,7 @@ dependencies:
 
 ## 📹 Demo Video
 
-[Insert demo video link here]
+https://github.com/user-attachments/assets/a26dec28-7bfd-4d29-b95e-6ec5e9437a40
 
 ---
 
