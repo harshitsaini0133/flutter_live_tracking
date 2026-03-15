@@ -141,7 +141,7 @@ class BottomInfoSheet extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: _getStatusColor(status).withOpacity(0.1),
+                          color: _getStatusColor(status).withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
                             color: _getStatusColor(status),

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -225,7 +224,7 @@ class _TrackingPageState extends State<TrackingPage> {
                       Polyline(
                         points: _fullRoute,
                         strokeWidth: 4,
-                        color: Colors.grey.withOpacity(0.7),
+                        color: Colors.grey.withValues(alpha: 0.7),
                       ),
 
                     // --------------------- DRIVER TRAIL (BLUE)

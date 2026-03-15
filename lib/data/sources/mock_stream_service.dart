@@ -14,7 +14,7 @@ class MockStreamService {
 
   Future<void> init() async {
     if (_initialized) return;
-    final raw = await rootBundle.loadString(assetPath);
+    await rootBundle.loadString(assetPath);
     _routePoints = [
       {
         "lat": 17.437462,
